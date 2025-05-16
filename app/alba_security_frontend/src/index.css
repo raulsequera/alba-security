@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: aliceblue;
+  overflow: auto;
+
+  background: radial-gradient(circle at center, #0EA5E9 0%, #0F172A 100%);
+  background-size: cover; 
+  background-repeat: no-repeat;
+}
+
+svg {
+  margin-left: -5%;
+  margin-right: auto;
+}
+
+h2 {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+}
+
+span {
+  color: var(--main-color);
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: gray;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.output-container pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #000000;
+}
+
+
+/* COMPONENTES */
+.card-item {
+  @apply bg-card hover:bg-card/80 text-lightText p-6 rounded-xl shadow-md hover:shadow-xl transition duration-200 cursor-pointer;
+}
+
+.card-title {
+  @apply text-xl font-bold uppercase mb-2;
+}
+
+.card-subtitle {
+  @apply text-sm text-gray-400;
+}
+
+.mt-subtitle {
+  @apply mt-1;
+}
+
+.card-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6;
+}
+
+/* Botón general del menú de navegación */
+.nav-button {
+  @apply flex items-center gap-2 px-4 py-2 text-lightText bg-white/10 hover:bg-white/20 rounded-md transition font-medium;
+}
+
+/* Panel desplegable del dropdown */
+.dropdown-panel {
+  @apply absolute mt-2 w-48 bg-card rounded-md shadow-lg border border-white/10 z-50 transition-all duration-200 ease-out transform;
+}
+
+/* Estados de apertura/cierre */
+.dropdown-panel--open {
+  @apply opacity-100 translate-y-0;
+}
+
+.dropdown-panel--closed {
+  @apply opacity-0 -translate-y-2 pointer-events-none;
+}
+
+/* PAGES */
+
+.form-wrapper {
+  @apply bg-card text-lightText p-6 rounded-xl shadow-md max-w-xl mx-auto;
+}
+
+.input-base {
+  @apply bg-white/10 text-lightText p-3 rounded-lg w-full mb-3;
+
+}
+
+.button-primary {
+  @apply bg-white/10 hover:bg-white/20 text-lightText p-3 rounded-lg transition;
+}
+
+.button-danger {
+  @apply bg-red-600 hover:bg-red-500 text-white p-3 rounded-lg transition;
+}
+
+.spinner {
+  @apply animate-spin h-8 w-8 border-4 border-white border-t-transparent rounded-full;
+}
+
+.page-back {
+  @apply min-h-screen pt-24 px-6 py-10 text-lightText bg-devices-gradient;
+}
+
+.page-back-graph {
+  @apply min-h-screen px-6 py-10 text-lightText bg-devices-gradient;
+}
+
+select {
+  background-color: #1E293B; 
+  color: #F1F5F9;         
+}
+
+option {
+  background-color: #1E293B;
+  color: #F1F5F9;
+}
+
+
+.scan-wrapper {
+  @apply bg-card p-8 rounded-xl max-w-4xl mx-auto shadow space-y-6;
+}
+
+/* SCAN DEVICES */
+.output-terminal {
+  @apply bg-black p-4 rounded-lg text-sm whitespace-pre-wrap overflow-auto;
+}
+
+.connection-item {
+  @apply bg-zinc-700 p-4 rounded flex justify-between items-center;
+}
+
+.button-mapa {
+  @apply bg-indigo-500 text-white px-3 py-1 rounded hover:bg-indigo-600;
+}
+
+.button-closemap {
+  @apply mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600;
+}
+
+/* INFO ENISA */
+
+.modal-content {
+  @apply bg-card text-lightText p-6 rounded-xl shadow-md w-full sm:w-3/4 lg:w-1/2;
+}
+
+.modal-content ul {
+  @apply border p-4 rounded-md bg-white/10 shadow-md text-sm;
+  color: #000000;
+}
+
+.button-close {
+  @apply bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-md transition;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 bg-black/50 flex justify-center items-center;
+  z-index: 50;
+}
+
+.input-base {
+  @apply bg-white/10 text-lightText p-3 rounded-lg w-full mb-6;
+}
+
+/* DEVICES PAGE */
+.card-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6;
+}
+
+.card-grid.list-view {
+  @apply grid grid-cols-1 gap-4 w-full; 
+}
+
+.card-item.list-view {
+  @apply w-full p-4 mb-4 bg-card rounded-md;
+}
